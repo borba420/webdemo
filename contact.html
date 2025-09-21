@@ -21,10 +21,14 @@
                 <h2>TK Trade</h2>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="index.html" class="nav-link" data-en="Home" data-sr="Početna" style="padding-top: 1rem;">Home</a>
+                <a href="about.html" class="nav-link" data-en="About" data-sr="O nama" style="padding-top: 1rem;">About</a>
+                <a href="services.html" class="nav-link" data-en="Services" data-sr="Usluge" style="padding-top: 1rem;">Services</a>
+                <a href="contact.html" class="nav-link active" data-en="Contact" data-sr="Kontakt" style="padding-top: 1rem;">Contact</a>
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="sr">SR</button>
+                </div>
             </div>
             <div class="nav-toggle" id="nav-toggle">
                 <span class="bar"></span>
@@ -37,8 +41,8 @@
     <!-- Contact Hero Section -->
     <section class="contact-hero">
         <div class="container">
-            <h1 class="fade-in">Contact Us</h1>
-            <p class="fade-in">Ready to start your global trading journey? Get in touch with our experts for personalized solutions and support.</p>
+            <h1 class="fade-in" data-en="Contact Us" data-sr="Kontaktirajte nas">Contact Us</h1>
+            <p class="fade-in" data-en="Ready to start your global trading journey? Get in touch with our experts for personalized solutions and support." data-sr="Spremni da započnete svoje globalno trgovinsko putovanje? Kontaktirajte naše stručnjake za personalizovana rešenja i podršku.">Ready to start your global trading journey? Get in touch with our experts for personalized solutions and support.</p>
         </div>
     </section>
 
@@ -48,48 +52,48 @@
             <div class="contact-grid">
                 <!-- Contact Information -->
                 <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>We're here to help you succeed in global markets. Reach out to us for any inquiries, partnerships, or support you need.</p>
+                    <h3 data-en="Get In Touch" data-sr="Kontaktirajte nas">Get In Touch</h3>
+                    <p data-en="We're here to help you succeed in global markets. Reach out to us for any inquiries, partnerships, or support you need." data-sr="Ovde smo da vam pomognemo da uspete na globalnim tržištima. Obratite nam se za bilo kakva pitanja, partnerstva ili podršku koja vam je potrebna.">We're here to help you succeed in global markets. Reach out to us for any inquiries, partnerships, or support you need.</p>
                     
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
-                            <p>Mon-Fri: 8:00 AM - 6:00 PM EST</p>
+                            <h4 data-en="Phone" data-sr="Telefon">Phone</h4>
+                            <p>+381 123 456</p>
+                            <p data-en="Mon-Fri: 8:00 AM - 6:00 PM EST" data-sr="Pon-Pet: 8:00 - 18:00 EST">Mon-Fri: 8:00 AM - 6:00 PM EST</p>
                         </div>
                     </div>
 
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
+                            <h4 data-en="Email" data-sr="E-mail">Email</h4>
                             <p>info@tktrade.com</p>
-                            <p>General inquiries and support</p>
+                            <p data-en="General inquiries and support" data-sr="Opšta pitanja i podrška">General inquiries and support</p>
                         </div>
                     </div>
 
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Address</h4>
-                            <p>123 Business Avenue, Suite 100</p>
-                            <p>New York, NY 10001, United States</p>
+                            <h4 data-en="Address" data-sr="Adresa">Address</h4>
+                            <p>Bulevar Mihajla Pupina 10D</p>
+                            <p>Novi Beograd 11070, Beograd, Srbija</p>
                         </div>
                     </div>
 
                     <div class="contact-item">
                         <i class="fas fa-clock"></i>
                         <div>
-                            <h4>Business Hours</h4>
-                            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                            <p>Saturday: 9:00 AM - 2:00 PM</p>
-                            <p>Sunday: Closed</p>
+                            <h4 data-en="Business Hours" data-sr="Radno vreme">Business Hours</h4>
+                            <p data-en="Monday - Friday: 8:00 AM - 6:00 PM" data-sr="Ponedeljak - Petak: 8:00 - 18:00">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p data-en="Saturday: 9:00 AM - 2:00 PM" data-sr="Subota: 9:00 - 14:00">Saturday: 9:00 AM - 2:00 PM</p>
+                            <p data-en="Sunday: Closed" data-sr="Nedelja: Zatvoreno">Sunday: Closed</p>
                         </div>
                     </div>
 
                     <div class="social-contact">
-                        <h4>Follow Us</h4>
+                        <h4 data-en="Follow Us" data-sr="Pratite nas">Follow Us</h4>
                         <div class="social-links">
                             <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                             <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
@@ -101,56 +105,56 @@
 
                 <!-- Contact Form -->
                 <div class="contact-form">
-                    <h3>Send Us a Message</h3>
+                    <h3 data-en="Send Us a Message" data-sr="Pošaljite nam poruku">Send Us a Message</h3>
                     <form id="contactForm" action="#" method="POST">
                         <div class="form-group">
-                            <label for="name">Full Name *</label>
+                            <label for="name" data-en="Full Name *" data-sr="Puno ime *">Full Name *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email Address *</label>
+                            <label for="email" data-en="Email Address *" data-sr="E-mail adresa *">Email Address *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
+                            <label for="phone" data-en="Phone Number" data-sr="Broj telefona">Phone Number</label>
                             <input type="tel" id="phone" name="phone">
                         </div>
 
                         <div class="form-group">
-                            <label for="company">Company Name</label>
+                            <label for="company" data-en="Company Name" data-sr="Naziv kompanije">Company Name</label>
                             <input type="text" id="company" name="company">
                         </div>
 
                         <div class="form-group">
-                            <label for="inquiry-type">Inquiry Type *</label>
+                            <label for="inquiry-type" data-en="Inquiry Type *" data-sr="Tip upita *">Inquiry Type *</label>
                             <select id="inquiry-type" name="inquiry-type" required>
-                                <option value="">Select an option</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="partnership">Partnership Opportunity</option>
-                                <option value="services">Service Information</option>
-                                <option value="support">Customer Support</option>
-                                <option value="quote">Request Quote</option>
-                                <option value="other">Other</option>
+                                <option value="" data-en="Select an option" data-sr="Izaberite opciju">Select an option</option>
+                                <option value="general" data-en="General Inquiry" data-sr="Opšti upit">General Inquiry</option>
+                                <option value="partnership" data-en="Partnership Opportunity" data-sr="Mogućnost partnerstva">Partnership Opportunity</option>
+                                <option value="services" data-en="Service Information" data-sr="Informacije o uslugama">Service Information</option>
+                                <option value="support" data-en="Customer Support" data-sr="Podrška kupcima">Customer Support</option>
+                                <option value="quote" data-en="Request Quote" data-sr="Zahtev za ponudu">Request Quote</option>
+                                <option value="other" data-en="Other" data-sr="Ostalo">Other</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="subject">Subject *</label>
+                            <label for="subject" data-en="Subject *" data-sr="Predmet *">Subject *</label>
                             <input type="text" id="subject" name="subject" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Please provide details about your inquiry..."></textarea>
+                            <label for="message" data-en="Message *" data-sr="Poruka *">Message *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Please provide details about your inquiry..." data-en="Please provide details about your inquiry..." data-sr="Molimo unesite detalje o vašem upitu..."></textarea>
                         </div>
 
                         <div class="form-group checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="newsletter" name="newsletter">
                                 <span class="checkmark"></span>
-                                I would like to receive updates and newsletters from TK Trade
+                                <span data-en="I would like to receive updates and newsletters from TK Trade" data-sr="Želeo bih da primam ažuriranja i biltene od TK Trade">I would like to receive updates and newsletters from TK Trade</span>
                             </label>
                         </div>
 
@@ -158,13 +162,13 @@
                             <label class="checkbox-label">
                                 <input type="checkbox" id="privacy" name="privacy" required>
                                 <span class="checkmark"></span>
-                                I agree to the <a href="#" target="_blank">Privacy Policy</a> and <a href="#" target="_blank">Terms of Service</a> *
+                                <span data-en="I agree to the" data-sr="Slažem se sa">I agree to the</span> <a href="#" target="_blank" data-en="Privacy Policy" data-sr="Politikom privatnosti">Privacy Policy</a> <span data-en="and" data-sr="i">and</span> <a href="#" target="_blank" data-en="Terms of Service" data-sr="Uslovima korišćenja">Terms of Service</a> *
                             </label>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-large">
                             <i class="fas fa-paper-plane"></i>
-                            Send Message
+                            <span data-en="Send Message" data-sr="Pošalji poruku">Send Message</span>
                         </button>
                     </form>
                 </div>
@@ -173,8 +177,8 @@
             <!-- Additional Contact Options -->
             <div class="contact-options">
                 <div class="section-header">
-                    <h2>Other Ways to Connect</h2>
-                    <p>Choose the communication method that works best for you</p>
+                    <h2 data-en="Other Ways to Connect" data-sr="Drugi načini povezivanja">Other Ways to Connect</h2>
+                    <p data-en="Choose the communication method that works best for you" data-sr="Izaberite način komunikacije koji vam najbolje odgovara">Choose the communication method that works best for you</p>
                 </div>
 
                 <div class="options-grid">
@@ -182,27 +186,27 @@
                         <div class="option-icon">
                             <i class="fas fa-calendar-alt"></i>
                         </div>
-                        <h3>Schedule a Meeting</h3>
-                        <p>Book a consultation with our experts to discuss your specific needs and requirements.</p>
-                        <a href="#" class="btn btn-secondary">Schedule Now</a>
+                        <h3 data-en="Schedule a Meeting" data-sr="Zakazivanje sastanka">Schedule a Meeting</h3>
+                        <p data-en="Book a consultation with our experts to discuss your specific needs and requirements." data-sr="Zakazivanje konsultacija sa našim stručnjacima za razgovor o vašim specifičnim potrebama i zahtevima.">Book a consultation with our experts to discuss your specific needs and requirements.</p>
+                        <a href="#" class="btn btn-secondary" data-en="Schedule Now" data-sr="Zakaži sada">Schedule Now</a>
                     </div>
 
                     <div class="option-card">
                         <div class="option-icon">
                             <i class="fas fa-comments"></i>
                         </div>
-                        <h3>Live Chat Support</h3>
-                        <p>Get instant answers to your questions through our live chat support during business hours.</p>
-                        <a href="#" class="btn btn-secondary">Start Chat</a>
+                        <h3 data-en="Live Chat Support" data-sr="Podrška preko četa">Live Chat Support</h3>
+                        <p data-en="Get instant answers to your questions through our live chat support during business hours." data-sr="Dobijte trenutne odgovore na vaša pitanja preko naše podrške preko četa tokom radnog vremena.">Get instant answers to your questions through our live chat support during business hours.</p>
+                        <a href="#" class="btn btn-secondary" data-en="Start Chat" data-sr="Počni čet">Start Chat</a>
                     </div>
 
                     <div class="option-card">
                         <div class="option-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
-                        <h3>Emergency Support</h3>
-                        <p>For urgent matters and critical issues, contact our emergency support line.</p>
-                        <a href="tel:+15551234567" class="btn btn-secondary">Call Now</a>
+                        <h3 data-en="Emergency Support" data-sr="Hitna podrška">Emergency Support</h3>
+                        <p data-en="For urgent matters and critical issues, contact our emergency support line." data-sr="Za hitne slučajeve i kritične probleme, kontaktirajte našu liniju za hitnu podršku.">For urgent matters and critical issues, contact our emergency support line.</p>
+                        <a href="tel:+15551234567" class="btn btn-secondary" data-en="Call Now" data-sr="Pozovi sada">Call Now</a>
                     </div>
                 </div>
             </div>
@@ -210,39 +214,39 @@
             <!-- FAQ Section -->
             <div class="faq-section">
                 <div class="section-header">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Quick answers to common questions about our services</p>
+                    <h2 data-en="Frequently Asked Questions" data-sr="Često postavljana pitanja">Frequently Asked Questions</h2>
+                    <p data-en="Quick answers to common questions about our services" data-sr="Brzi odgovori na česta pitanja o našim uslugama">Quick answers to common questions about our services</p>
                 </div>
 
                 <div class="faq-grid">
                     <div class="faq-item">
-                        <h4>What services does TK Trade offer?</h4>
-                        <p>We provide comprehensive trading and distribution services including global trading, supply chain management, logistics, market analysis, and business consulting.</p>
+                        <h4 data-en="What services does TK Trade offer?" data-sr="Koje usluge pruža TK Trade?">What services does TK Trade offer?</h4>
+                        <p data-en="We provide comprehensive trading and distribution services including global trading, supply chain management, logistics, market analysis, and business consulting." data-sr="Pružamo sveobuhvatne usluge trgovine i distribucije uključujući globalnu trgovinu, upravljanje lancem snabdevanja, logistiku, analizu tržišta i poslovno savetovanje.">We provide comprehensive trading and distribution services including global trading, supply chain management, logistics, market analysis, and business consulting.</p>
                     </div>
 
                     <div class="faq-item">
-                        <h4>How quickly can you respond to inquiries?</h4>
-                        <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call our emergency support line.</p>
+                        <h4 data-en="How quickly can you respond to inquiries?" data-sr="Koliko brzo možete odgovoriti na upite?">How quickly can you respond to inquiries?</h4>
+                        <p data-en="We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call our emergency support line." data-sr="Obično odgovaramo na sve upite u roku od 24 sata tokom radnih dana. Za hitne slučajeve, molimo pozovite našu liniju za hitnu podršku.">We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call our emergency support line.</p>
                     </div>
 
                     <div class="faq-item">
-                        <h4>Do you work with small businesses?</h4>
-                        <p>Yes, we work with businesses of all sizes, from startups to large enterprises. We tailor our services to meet your specific needs and budget.</p>
+                        <h4 data-en="Do you work with small businesses?" data-sr="Da li radite sa malim biznisima?">Do you work with small businesses?</h4>
+                        <p data-en="Yes, we work with businesses of all sizes, from startups to large enterprises. We tailor our services to meet your specific needs and budget." data-sr="Da, radimo sa biznisima svih veličina, od startup-a do velikih preduzeća. Prilagođavamo naše usluge vašim specifičnim potrebama i budžetu.">Yes, we work with businesses of all sizes, from startups to large enterprises. We tailor our services to meet your specific needs and budget.</p>
                     </div>
 
                     <div class="faq-item">
-                        <h4>What industries do you serve?</h4>
-                        <p>We serve multiple industries including technology, fashion, healthcare, automotive, food & beverage, and home & garden sectors.</p>
+                        <h4 data-en="What industries do you serve?" data-sr="Koje industrije opslužujete?">What industries do you serve?</h4>
+                        <p data-en="We serve multiple industries including technology, fashion, healthcare, automotive, food & beverage, and home & garden sectors." data-sr="Opslužujemo više industrija uključujući tehnologiju, modu, zdravstvo, automobilsku industriju, hranu i piće, te dom i baštu sektore.">We serve multiple industries including technology, fashion, healthcare, automotive, food & beverage, and home & garden sectors.</p>
                     </div>
 
                     <div class="faq-item">
-                        <h4>How do you ensure quality and compliance?</h4>
-                        <p>We maintain strict quality control measures and ensure full compliance with international trade regulations and standards.</p>
+                        <h4 data-en="How do you ensure quality and compliance?" data-sr="Kako osiguravate kvalitet i usklađenost?">How do you ensure quality and compliance?</h4>
+                        <p data-en="We maintain strict quality control measures and ensure full compliance with international trade regulations and standards." data-sr="Održavamo stroge mere kontrole kvaliteta i osiguravamo potpunu usklađenost sa međunarodnim trgovinskim propisima i standardima.">We maintain strict quality control measures and ensure full compliance with international trade regulations and standards.</p>
                     </div>
 
                     <div class="faq-item">
-                        <h4>Can you help with customs and regulatory requirements?</h4>
-                        <p>Absolutely. Our team has extensive experience with customs clearance, documentation, and regulatory compliance across multiple countries.</p>
+                        <h4 data-en="Can you help with customs and regulatory requirements?" data-sr="Možete li pomoći sa carinskim i regulatornim zahtevima?">Can you help with customs and regulatory requirements?</h4>
+                        <p data-en="Absolutely. Our team has extensive experience with customs clearance, documentation, and regulatory compliance across multiple countries." data-sr="Apsolutno. Naš tim ima opsežno iskustvo sa carinskim postupcima, dokumentacijom i regulatornom usklađenošću u više zemalja.">Absolutely. Our team has extensive experience with customs clearance, documentation, and regulatory compliance across multiple countries.</p>
                     </div>
                 </div>
             </div>
@@ -253,12 +257,12 @@
     <section class="map-section">
         <div class="container">
             <div class="section-header">
-                <h2>Visit Our Office</h2>
-                <p>Located in the heart of New York's business district</p>
+                <h2 data-en="Visit Our Office" data-sr="Posetite našu kancelariju">Visit Our Office</h2>
+                <p data-en="Located in the heart of New Belgrade" data-sr="Nalazi se u srcu Novog Beograda">Located in the heart of New Belgrade</p>
             </div>
             <div class="map-container">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215319073685!2d-74.00601168459395!3d40.75889697932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square%2C%20New%20York%2C%20NY%2010001%2C%20USA!5e0!3m2!1sen!2sus!4v1634567890123!5m2!1sen!2sus" 
+                    src="https://www.google.com/maps/embed/v1/place?q=Bulevar%20Mihajla%20Pupina%2010D&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" 
                     width="100%" 
                     height="400" 
                     style="border:0;" 
@@ -276,7 +280,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>TK Trade</h3>
-                    <p>Connecting global markets through professional trading and distribution services.</p>
+                    <p data-en="Connecting global markets through professional trading and distribution services." data-sr="Povezivanje globalnih tržišta kroz profesionalne usluge trgovine i distribucije.">Connecting global markets through professional trading and distribution services.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -284,34 +288,34 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4 data-en="Quick Links" data-sr="Brze veze">Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-en="Home" data-sr="Početna">Home</a></li>
+                        <li><a href="about.html" data-en="About Us" data-sr="O nama">About Us</a></li>
+                        <li><a href="services.html" data-en="Services" data-sr="Usluge">Services</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-sr="Kontakt">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4 data-en="Services" data-sr="Usluge">Services</h4>
                     <ul>
-                        <li><a href="services.html">Global Trading</a></li>
-                        <li><a href="services.html">Distribution</a></li>
-                        <li><a href="services.html">Supply Chain</a></li>
-                        <li><a href="services.html">Market Analysis</a></li>
+                        <li><a href="services.html" data-en="Global Trading" data-sr="Globalna trgovina">Global Trading</a></li>
+                        <li><a href="services.html" data-en="Distribution" data-sr="Distribucija">Distribution</a></li>
+                        <li><a href="services.html" data-en="Supply Chain" data-sr="Lanac snabdevanja">Supply Chain</a></li>
+                        <li><a href="services.html" data-en="Market Analysis" data-sr="Analiza tržišta">Market Analysis</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact Info</h4>
+                    <h4 data-en="Contact Info" data-sr="Kontakt informacije">Contact Info</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-phone"></i> +381 123 456</p>
                         <p><i class="fas fa-envelope"></i> info@tktrade.com</p>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 100</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Bulevar Mihajla Pupina 10D</p>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TK Trade. All rights reserved.</p>
+                <p>&copy; 2025 TK Trade. All rights reserved.</p>
             </div>
         </div>
     </footer>
