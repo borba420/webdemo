@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initSmoothScrolling();
     initLoadingAnimations();
+    initLanguageSwitcher();
 });
 
 // Navigation functionality
@@ -657,3 +658,121 @@ const additionalStyles = `
 
 // Inject additional styles
 document.head.insertAdjacentHTML('beforeend', additionalStyles);
+
+// Language Switcher functionality
+function initLanguageSwitcher() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
+    
+    // Set initial language
+    setLanguage(currentLanguage);
+    
+    langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const selectedLang = this.getAttribute('data-lang');
+            setLanguage(selectedLang);
+            localStorage.setItem('selectedLanguage', selectedLang);
+        });
+    });
+    
+    // Ensure language persistence across page loads
+    window.addEventListener('load', function() {
+        const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+        setLanguage(savedLanguage);
+    });
+}
+
+function setLanguage(lang) {
+    // Update active language button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Get all elements with data attributes (including headings, paragraphs, etc.)
+    const elements = document.querySelectorAll('[data-en][data-sr]');
+    
+    // Add translating class to all elements
+    elements.forEach(element => {
+        element.classList.add('translating');
+        element.classList.remove('translated');
+    });
+    
+    // Update all elements with data attributes
+    setTimeout(() => {
+        elements.forEach(element => {
+            if (lang === 'sr') {
+                const serbianText = element.getAttribute('data-sr');
+                if (serbianText) {
+                    // Handle different element types
+                    if (element.tagName === 'TEXTAREA') {
+                        element.placeholder = serbianText;
+                    } else if (element.tagName === 'OPTION') {
+                        element.textContent = serbianText;
+                    } else {
+                        // For all other elements including headings, paragraphs, etc.
+                        element.textContent = serbianText;
+                    }
+                }
+            } else {
+                const englishText = element.getAttribute('data-en');
+                if (englishText) {
+                    // Handle different element types
+                    if (element.tagName === 'TEXTAREA') {
+                        element.placeholder = englishText;
+                    } else if (element.tagName === 'OPTION') {
+                        element.textContent = englishText;
+                    } else {
+                        // For all other elements including headings, paragraphs, etc.
+                        element.textContent = englishText;
+                    }
+                }
+            }
+            
+            // Remove translating class and add translated class
+            element.classList.remove('translating');
+            element.classList.add('translated');
+        });
+        
+        // Remove translated class after animation completes
+        setTimeout(() => {
+            elements.forEach(element => {
+                element.classList.remove('translated');
+            });
+        }, 300);
+    }, 150);
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+    
+    // Update page title based on current page
+    updatePageTitle(lang);
+}
+
+function updatePageTitle(lang) {
+    const currentPage = window.location.pathname.split('/').pop().split('.')[0];
+    const titles = {
+        'index': {
+            'en': 'TK Trade - Professional Trading & Distribution Services',
+            'sr': 'TK Trade - Profesionalne usluge trgovine i distribucije'
+        },
+        'about': {
+            'en': 'About Us - TK Trade | Our Mission & Expertise',
+            'sr': 'O nama - TK Trade | Naša misija i stručnost'
+        },
+        'services': {
+            'en': 'Our Services - TK Trade | Trading & Distribution Solutions',
+            'sr': 'Naše usluge - TK Trade | Rešenja za trgovinu i distribuciju'
+        },
+        'contact': {
+            'en': 'Contact Us - TK Trade | Get In Touch With Our Experts',
+            'sr': 'Kontaktirajte nas - TK Trade | Kontaktirajte naše stručnjake'
+        }
+    };
+    
+    if (titles[currentPage] && titles[currentPage][lang]) {
+        document.title = titles[currentPage][lang];
+    }
+}
