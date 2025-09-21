@@ -40,8 +40,28 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.5rem; }
+h1 { 
+    font-size: 3.5rem; 
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+/* Override animation for H1 elements that already have fade-in class */
+h1.fade-in {
+    animation: fadeInUp 1s ease 0.2s forwards;
+}
+
+/* Override animation for H2 elements that already have fade-in class */
+h2.fade-in {
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+h2 { 
+    font-size: 2.5rem; 
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+}
 h3 { font-size: 1.875rem; }
 h4 { font-size: 1.5rem; }
 h5 { font-size: 1.25rem; }
@@ -145,7 +165,8 @@ p {
     content: '';
     position: absolute;
     bottom: -5px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background-color: var(--primary-color);
@@ -169,6 +190,75 @@ p {
     background-color: var(--text-dark);
     margin: 3px 0;
     transition: var(--transition);
+}
+
+/* Language Toggle */
+.language-toggle {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* Language switching animation */
+.translating {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.translated {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Enhanced animation for headings */
+h1.translating,
+h2.translating,
+h3.translating,
+h4.translating,
+h5.translating,
+h6.translating {
+    opacity: 0;
+    transform: translateY(15px) scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+h1.translated,
+h2.translated,
+h3.translated,
+h4.translated,
+h5.translated,
+h6.translated {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.lang-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+.lang-btn:hover:not(.active) {
+    background-color: var(--border-color);
+    color: var(--text-dark);
 }
 
 /* Hero Section */
@@ -289,6 +379,26 @@ p {
     background-color: var(--bg-white);
 }
 
+/* Consistent section spacing */
+section {
+    padding: 5rem 0;
+}
+
+section:first-of-type {
+    padding-top: 8rem;
+}
+
+/* Ensure consistent container spacing */
+.container {
+    padding: 0 20px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
@@ -307,8 +417,10 @@ p {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .feature-card {
@@ -600,6 +712,9 @@ p {
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
 }
 
 .service-card::before {
@@ -640,6 +755,20 @@ p {
     left: 0;
     color: var(--primary-color);
     font-weight: bold;
+}
+
+.service-card h4 {
+    color: var(--primary-color);
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.service-card ul li strong {
+    color: var(--text-dark);
+    font-weight: 600;
 }
 
 /* Contact Page Styles */
@@ -793,10 +922,17 @@ p {
         transform: translateY(-8px) rotate(-45deg);
     }
 
+    .language-toggle {
+        margin-left: 0;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+        padding: 0 15px;
     }
 
     .hero-title {
@@ -819,10 +955,13 @@ p {
 
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: none;
     }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .about-grid,
@@ -833,11 +972,47 @@ p {
 
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .values-grid,
+    .expertise-grid,
+    .industries-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 3rem;
+    }
+
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .step-number {
+        align-self: center;
     }
 
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
     h3 { font-size: 1.5rem; }
+    
+    /* Consistent section spacing on mobile */
+    section {
+        padding: 3rem 0;
+    }
+    
+    section:first-of-type {
+        padding-top: 6rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -860,8 +1035,41 @@ p {
     .feature-card,
     .service-card,
     .contact-form,
-    .contact-info {
+    .contact-info,
+    .value-card,
+    .expertise-item,
+    .industry-item,
+    .process-step {
         padding: 1.5rem;
+    }
+
+    /* Even smaller spacing on very small screens */
+    section {
+        padding: 2rem 0;
+    }
+    
+    section:first-of-type {
+        padding-top: 5rem;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .values-grid,
+    .expertise-grid,
+    .industries-grid,
+    .process-steps {
+        gap: 1rem;
+    }
+    
+    .expertise-grid {
+        padding: 1rem 0.5rem;
+        grid-template-columns: 1fr;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 3rem;
     }
 }
 
@@ -911,9 +1119,13 @@ p {
 
 .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 4rem;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .expertise-item {
@@ -1002,17 +1214,36 @@ p {
     padding: 1.5rem;
     border-radius: 8px;
     border-left: 4px solid var(--primary-color);
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
 }
 
 .service-benefits h4 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-size: 1rem;
+    font-weight: 600;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.3;
+    flex-shrink: 0;
 }
 
 .service-benefits p {
     font-size: 0.9rem;
     margin: 0;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    flex-grow: 1;
 }
 
 .industries-grid {
@@ -1064,9 +1295,13 @@ p {
 
 .process-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 4rem;
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .process-step {
@@ -1078,6 +1313,9 @@ p {
     border-radius: 12px;
     border: 1px solid var(--border-color);
     transition: var(--transition);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .process-step:hover {
@@ -1102,8 +1340,44 @@ p {
 .step-content h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .step-content p {
     margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.6;
+}
+
+/* Additional responsive improvements for Key Benefits */
+@media (max-width: 768px) {
+    .service-benefits {
+        min-height: 100px;
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-benefits {
+        min-height: 90px;
+        padding: 1rem;
+    }
+    
+    .service-benefits h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .service-benefits p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .service-card {
+        min-height: auto;
+    }
 }
